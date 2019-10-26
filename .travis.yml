@@ -3,12 +3,11 @@ cache:
   directories:
     - ~!@/.npm
 node_js:
-  - '10.16.3'
+  - '9'
 git:
   depth: 3
 script:
   - yarm build
-  - echo 'Aqui_tengo_que_poner_mi_domini_personalizado' > public/CNAME
 deploy:
   provider: pages
   skip-cleanup: true 
