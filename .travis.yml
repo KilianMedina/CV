@@ -1,21 +1,21 @@
-languaje: node_js
+language: node_js
 cache:
-  directories:
-    - ~!@/.npm
+  directories: 
+    - ~/.npm
 node_js:
-  - '9'
+  - '10.16.3'
 git:
   depth: 3
 script:
-  - yarm build
+  - yarn build
+  - echo 'esta_linea_es_mi_dominio_personalizado' > public/CNAME
 deploy:
   provider: pages
-  skip-cleanup: true 
-  keep-history: true 
+  skip-cleanup: true
+  keep-history: true
   github-token: $GITHUB_TOKEN
   local-dir: dist/
   target-branch: master
   commit_message: "Deploy release ${TRAVIS_TAG}"
   on:
     branch: develop
-
